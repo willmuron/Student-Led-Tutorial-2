@@ -19,7 +19,7 @@ Prepare a tutorial for your peers on performing a **de novo genome assembly** us
 
 ## **Data to Use**
 - **Sample Dataset**: Use a small bacterial genome dataset from [NCBI SRA](https://www.ncbi.nlm.nih.gov/sra).
-  - Example: E. coli reads, accession number **SRR12936357**.
+  - Example: E. coli reads. Or Covid19: https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR11177792&display=download
 - Download the paired-end FASTQ files:
   ```bash
-  fastq-dump --split-files SRR12936357
+  fastq-dump --split-files SRR11177792
