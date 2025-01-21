@@ -18,16 +18,21 @@ Prepare a tutorial for your peers on performing a **de novo genome assembly** us
 ---
 
 ## **Data to Use**
-- **Sample Dataset**: Use a small bacterial genome dataset from [NCBI SRA](https://www.ncbi.nlm.nih.gov/sra).
-  - Example: E. coli reads. Or Covid19: https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR11177792&display=download
+- **Sample Dataset**: The data we will use is whole genomic data from an anvironmental source. Specifically sequences obtained from seal feces to determine whether they pose a threat of bacterial and viral fecal contamination. 
 - Download the paired-end FASTQ files:
   ```bash
-  fastq-dump --split-files SRR11177792
+  fastq-dump --split-files ERR13601257
 
 - Output files:
-   - SRR11177792_1.fastq (forward reads).
-   - SRR11177792_2.fastq (reverse reads).
- 
+   - ERR13601257_1.fastq (forward reads).
+   - ERR13601257_2.fastq (reverse reads).
+- Subsample files for the tutorial, otherwise, the run will take up a lot of time.
+  ```bash
+  #Make sure seqtk is installed in the HPC beforehand. If not, use a conda environment.
+  seqtk sample -s100 ERR13601257_1.fastq 0.25 > ERR13601257_subsampled_1.fastq   #Samples 25% of reads in file
+  seqtk sample -s100 ERR13601257_2.fastq 0.25 > ERR13601257_subsampled_2.fastq   #Samples 25% of reads in file
+
+
 ## **Tasks and Deliverables**
 ### **Part 1: Data Preparation**
 1. Download the raw sequencing data in FASTQ format (using the command above).
@@ -36,7 +41,7 @@ Prepare a tutorial for your peers on performing a **de novo genome assembly** us
    - Run FastQC;
 
    ```bash
-   fastqc SRR11177792_1.fastq SRR11177792_2.fastq
+   fastqc SRR11177792_1.fastq SRR11177792_2.fastq #if using subsamples, replace file names accordingly.
 
 3. Optionally trim low-quality bases and adapters using Trimmomatic:
    ```bash
