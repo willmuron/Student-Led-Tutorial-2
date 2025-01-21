@@ -41,18 +41,18 @@ Prepare a tutorial for your peers on performing a **de novo genome assembly** us
    - Run FastQC;
 
    ```bash
-   fastqc SRR11177792_1.fastq SRR11177792_2.fastq #if using subsamples, replace file names accordingly.
+   fastqc ERR13601257_1.fastq ERR13601257_2.fastq #if using subsamples, replace file names accordingly.
 
 3. Optionally trim low-quality bases and adapters using Trimmomatic:
    ```bash
-   trimmomatic PE -phred33 SRR11177792_1.fastq SRR11177792_2.fastq \
+   trimmomatic PE -phred33 ERR13601257_1.fastq ERR13601257_2.fastq \
    trimmed_1.fastq unpaired_1.fastq trimmed_2.fastq unpaired_2.fastq \
    ILLUMINACLIP:adapters.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:36
 
 ### **Part 2: Running SPAdes**
 1. Perform de novo assembly using SPAdes:
    ```bash
-   spades.py -1 SRR11177792_1.fastq -2 SRR11177792_2.fastq -o spades_output
+   spades.py -1 ERR13601257_1.fastq -2 ERR13601257_2.fastq -o spades_output
 - -1 and -2: Paired-end reads.
 - -o: Specify the output directory (e.g., spades_output).
 2. Explore the SPAdes output files:
