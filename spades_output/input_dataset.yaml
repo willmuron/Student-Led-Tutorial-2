@@ -1,0 +1,7 @@
+- "left reads":
+  - "/jet/home/ataylor2/Student-Led-Tutorial-2/trimmed_1.fastq"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/jet/home/ataylor2/Student-Led-Tutorial-2/trimmed_2.fastq"
+  "type": "paired-end"
