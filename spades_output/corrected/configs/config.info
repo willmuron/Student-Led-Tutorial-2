@@ -1,7 +1,7 @@
 ; = HAMMER =
 ; input options: working dir, input files, offset, and possibly kmers
 dataset /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/input_dataset.yaml
-input_working_dir /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/tmp/hammer_jcjd08_m
+input_working_dir /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/tmp/hammer_4h2eqdby
 input_trim_quality			4
 input_qvoffset				
 output_dir /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/corrected

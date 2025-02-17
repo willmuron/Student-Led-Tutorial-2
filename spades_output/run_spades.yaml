@@ -6,6 +6,10 @@
   - .bin_reads
   - tmp/spades_c5ic1sln
   - configs
+  - tmp/hammer_jcjd08_m
+  - .bin_reads
+  - tmp/spades_1lgr_p1l
+  - configs
   output_files: []
   path: 'true'
   short_name: before_start
@@ -21,7 +25,7 @@
   - /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/corrected/configs/config.info
   config_dir: corrected
   del_after:
-  - tmp/hammer_jcjd08_m
+  - tmp/hammer_4h2eqdby
   output_files:
   - /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/corrected/corrected.yaml
   path: /jet/home/ataylor2/Student-Led-Tutorial-2/SPAdes-3.15.0-Linux/bin/spades-hammer
@@ -115,7 +119,7 @@
   config_dir: ''
   del_after:
   - .bin_reads
-  - tmp/spades_1lgr_p1l
+  - tmp/spades_c8kanzne
   output_files: []
   path: /usr/bin/python3
   short_name: copy_files

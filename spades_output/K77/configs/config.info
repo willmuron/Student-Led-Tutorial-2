@@ -15,7 +15,7 @@ dataset /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/dataset.info
 log_filename    log.properties
 
 output_base /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output
-tmp_dir /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/tmp/spades_1lgr_p1l
+tmp_dir /jet/home/ataylor2/Student-Led-Tutorial-2/spades_output/tmp/spades_c8kanzne
 
 main_iteration true
 ; iterative mode switcher, activates additional contigs usage
