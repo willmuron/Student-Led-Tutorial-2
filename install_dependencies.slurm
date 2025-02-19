@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1                    # Use 1 task
 #SBATCH --mem=1G                      # Request 2 GB of memory
 #SBATCH --partition=RM-shared          # Use the standard partition (ensure it has internet access)
-#SBATCH --mail-user=aetaylo2@svsu.edu  # Add your email address here
+#SBATCH --mail-user=your.email@svsu.edu  # Add your email address here
 #SBATCH --mail-type=ALL               # Send email notifications for all job states (BEGIN, END, FAIL)
 
 # Load the SRA Toolkit module. This is the software we will use for this job. Already available in the HPC, but must be loaded.
