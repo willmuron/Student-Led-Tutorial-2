@@ -1,7 +1,7 @@
 ## Token for Student-Led-Tutorial-2
 (If you did not save your llllooooonnnnngggggggg code from the last time we made a token)
 
-## ** On your GitHub...**
+## On your GitHub...
 1. Go to Settings
   
 2.  Developer settings
