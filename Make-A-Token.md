@@ -12,5 +12,5 @@
 4. Generate new token
   - Generate new token (classic)
       * Note: whatever number you want to remember
-  * Under Select scopes: check repo
+  * Under Select scopes: check **repo**
   - Generate token
