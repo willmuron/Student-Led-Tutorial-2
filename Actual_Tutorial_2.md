@@ -9,13 +9,47 @@ Create a tutorial for your peers on conducting a de novo genome assembly using t
 
 ## **Required Software**
 1. **SPAdes**: For de novo genome assembly.
-   - [SPAdes Documentation]
+   - Will be done via slurm.
 2. **QUAST**: For assembly quality assessment.
-   - [QUAST Documentation]
+   - Will be done via slurm.
 3. **Bandage**: For assembly visualization.
    - [Bandage GitHub](https://rrwick.github.io/Bandage/)
 
 ---
+
+## **Set Up**
+   Log into HPC and go into your /ocean/projects/agr250001p/username 
+
+```bash
+   cd /ocean/projects/agr250001p/user.name
+
+```
+## Create New Fork 
+Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the repository.
+  
+```bash
+   git clone https://github.com/user-name/Student-Led-Tutorial-2.git
+```
+```bash
+   cd Student-Led-Tutorial-2
+```
+```bash
+   interact
+```
+
+## ** Install Dependencies**
+- ** Edit .slurm script.
+
+```bash
+   vi install_dependencies.slurm
+```
+- Edit email address. (I don't want your emails)
+
+- Download the .slurm script.
+```bash
+   source install_dependencies.slurm
+```
+
 
 ## **Data to Use**
 - **Sample Dataset**: The data we will use is whole genomic data from an anvironmental source. Specifically sequences obtained from seal feces to determine whether they pose a threat of bacterial and viral fecal contamination. 
@@ -41,7 +75,7 @@ Create a tutorial for your peers on conducting a de novo genome assembly using t
    - Run FastQC;
 
    ```bash
-   fastqc ERR13601257_1.fastq ERR13601257_2.fastq #if using subsamples, replace file names accordingly.
+   ./FastQC/fastqc ERR13601257_subsampled_1.fastq EER13601257_subsampled_2.fastq #if using subsamples, replace file names accordingly.
 
 3. Optionally trim low-quality bases and adapters using Trimmomatic:
    ```bash
