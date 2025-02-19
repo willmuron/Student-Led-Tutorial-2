@@ -73,31 +73,33 @@ Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the re
    - FastQC Documentation.
    - Run FastQC;
 
-   ```bash
+```bash
    ./FastQC/fastqc ERR13601257_subsampled_1.fastq EER13601257_subsampled_2.fastq #if using subsamples, replace file names accordingly.
+```
 
 3. Optionally trim low-quality bases and adapters using Trimmomatic:
-   ```bash
-   trimmomatic PE -phred33 ERR13601257_1.fastq ERR13601257_2.fastq \
-   trimmed_1.fastq unpaired_1.fastq trimmed_2.fastq unpaired_2.fastq \
-   ILLUMINACLIP:adapters.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:36
+```bash
+   java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 ERR13601257_subsampled_1.fastq ERR13601257_subsampled_2.fastq trimmed_1.fastq unpaired_1.fastq trimmed_2.fastq unpaired_2.fastq ILLUMINACLIP:adapters.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:36
+```   
 
 ### **Part 2: Running SPAdes**
 1. Perform de novo assembly using SPAdes:
-   ```bash
-   spades.py -1 ERR13601257_1.fastq -2 ERR13601257_2.fastq -o spades_output
+```bash
+   python3 ./SPAdes-3.15.0-Linux/bin/spades.py -1 trimmed_1.fastq -2 trimmed_2.fastq -o spades_output
+```
 - -1 and -2: Paired-end reads.
 - -o: Specify the output directory (e.g., spades_output).
+
 2. Explore the SPAdes output files:
-   - *contigs.fasta*: Assembled contigs.
+   - *contigs.fasta*: Assembled contigs. 
    - *scaffolds.fasta*: Assembled scaffolds (contigs linked by paired-end reads).
-   - *assembly_graph.gfa*: Graph representation of the assembly.
+   - *assembly_graph.gfa*: Graph representation of the assembly using Bandage.
 
 ### **Part 3: Assessing Assembly Quality**
-
 1. Use QUAST to evaluate assembly quality:
-   ```bash
-   quast.py -o quast_output spades_output/contigs.fasta
+```bash
+python3 ./quast-5.3.0/quast.py -o quast_output spades_output/contigs.fasta
+```   
 
 2. Review key metrics:
    - N50: Length of the shortest contig in the smallest set covering 50% of the genome.
