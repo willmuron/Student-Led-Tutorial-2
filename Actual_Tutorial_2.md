@@ -37,8 +37,8 @@ Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the re
    interact
 ```
 
-## ** Install Dependencies**
-- ** Edit .slurm script.
+## Install Dependencies
+- Edit .slurm script.
 
 ```bash
    vi install_dependencies.slurm
@@ -50,10 +50,9 @@ Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the re
    source install_dependencies.slurm
 ```
 
-
 ## **Data to Use**
 - **Sample Dataset**: The data we will use is whole genomic data from an anvironmental source. Specifically sequences obtained from seal feces to determine whether they pose a threat of bacterial and viral fecal contamination. 
-- Download the paired-end FASTQ files:
+- Download the paired-end seal poop FASTQ files:
   ```bash
   fastq-dump --split-files ERR13601257
 
