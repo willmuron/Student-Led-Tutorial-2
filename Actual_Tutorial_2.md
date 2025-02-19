@@ -21,49 +21,49 @@ Create a tutorial for your peers on conducting a de novo genome assembly using t
    Log into HPC and go into your /ocean/projects/agr250001p/username 
 
 ```bash
-   cd /ocean/projects/agr250001p/user.name
-
+cd /ocean/projects/agr250001p/user.name
 ```
 ## Create New Fork 
 Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the repository.
   
 ```bash
-   git clone https://github.com/user-name/Student-Led-Tutorial-2.git
+git clone https://github.com/user-name/Student-Led-Tutorial-2.git
 ```
 ```bash
-   cd Student-Led-Tutorial-2
+cd Student-Led-Tutorial-2
 ```
 ```bash
-   interact
+interact
 ```
 
 ## Install Dependencies
 - Edit .slurm script.
 
 ```bash
-   vi install_dependencies.slurm
+vi install_dependencies.slurm
 ```
 - Edit email address. (I don't want your emails)
 
 - Download the .slurm script.
 ```bash
-   source install_dependencies.slurm
+source install_dependencies.slurm
 ```
 
 ## **Data to Use**
 - **Sample Dataset**: The data we will use is whole genomic data from an anvironmental source. Specifically sequences obtained from seal feces to determine whether they pose a threat of bacterial and viral fecal contamination. 
 - Download the paired-end seal poop FASTQ files:
-  ```bash
-  fastq-dump --split-files ERR13601257
+```bash
+fastq-dump --split-files ERR13601257
+```
 
 - Output files:
    - ERR13601257_1.fastq (forward reads).
    - ERR13601257_2.fastq (reverse reads).
 - Subsample files for the tutorial, otherwise, the run will take up a lot of time.
-  ```bash
-  #Make sure seqtk is installed in the HPC beforehand. If not, use a conda environment.
-  seqtk sample -s100 ERR13601257_1.fastq 0.25 > ERR13601257_subsampled_1.fastq   #Samples 25% of reads in file
-  seqtk sample -s100 ERR13601257_2.fastq 0.25 > ERR13601257_subsampled_2.fastq   #Samples 25% of reads in file
+```bash
+#Make sure seqtk is installed in the HPC beforehand. If not, use a conda environment.
+seqtk sample -s100 ERR13601257_1.fastq 0.25 > ERR13601257_subsampled_1.fastq   #Samples 25% of reads in file
+seqtk sample -s100 ERR13601257_2.fastq 0.25 > ERR13601257_subsampled_2.fastq   #Samples 25% of reads in file
 
 
 ## **Tasks and Deliverables**
@@ -74,7 +74,7 @@ Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the re
    - Run FastQC;
 
 ```bash
-   ./FastQC/fastqc ERR13601257_subsampled_1.fastq EER13601257_subsampled_2.fastq #if using subsamples, replace file names accordingly.
+./FastQC/fastqc ERR13601257_subsampled_1.fastq EER13601257_subsampled_2.fastq #if using subsamples, replace file names accordingly.
 ```
 
 3. Optionally trim low-quality bases and adapters using Trimmomatic:
@@ -85,7 +85,7 @@ Create your own fork of 'Student-Led-Tutorial-2' to have your own copy of the re
 ### **Part 2: Running SPAdes**
 1. Perform de novo assembly using SPAdes:
 ```bash
-   python3 ./SPAdes-3.15.0-Linux/bin/spades.py -1 trimmed_1.fastq -2 trimmed_2.fastq -o spades_output
+python3 ./SPAdes-3.15.0-Linux/bin/spades.py -1 trimmed_1.fastq -2 trimmed_2.fastq -o spades_output
 ```
 - -1 and -2: Paired-end reads.
 - -o: Specify the output directory (e.g., spades_output).
