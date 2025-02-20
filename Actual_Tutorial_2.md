@@ -74,7 +74,7 @@ seqtk sample -s100 ERR13601257_2.fastq 0.25 > ERR13601257_subsampled_2.fastq   #
    - Run FastQC;
 
 ```bash
-./FastQC/fastqc ERR13601257_subsampled_1.fastq EER13601257_subsampled_2.fastq #if using subsamples, replace file names accordingly.
+./FastQC/fastqc ERR13601257_subsampled_1.fastq ERR13601257_subsampled_2.fastq #if using subsamples, replace file names accordingly.
 ```
 
 3. Optionally trim low-quality bases and adapters using Trimmomatic:
